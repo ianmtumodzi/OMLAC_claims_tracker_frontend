@@ -1,6 +1,15 @@
-<div class="flex h-screen">
-   <app-admin-sidebar/>
-  <div class="flex-1 p-8 accent-gray-300">
-    <router-outlet></router-outlet>
+<div class="h-screen flex flex-col overflow-hidden">
+  <!-- Full-width Header on top -->
+  <app-header class="w-full"></app-header>
+
+  <!-- Below the header: Sidebar + Main content -->
+  <div class="flex flex-1 overflow-hidden">
+    <!-- Sidebar on the left -->
+    <app-admin-sidebar class="w-64 flex-shrink-0"></app-admin-sidebar>
+
+    <!-- Main content on the right -->
+    <div class="flex-1 overflow-y-auto p-8 bg-gray-50">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-admin-sidebar',
@@ -10,5 +10,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './admin-sidebar.component.css'
 })
 export class AdminSidebarComponent {
+  private router = inject(Router);
 
+  isActive(route: string): boolean {
+    return this.router.url === route;
+  }
 }
