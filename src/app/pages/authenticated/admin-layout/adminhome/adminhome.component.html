@@ -1,39 +1,41 @@
-<div class="bg-white p-1 w-full ">
-  <div class="grid grid-cols-5 gap-10">
-    
+<!-- Main Responsive Container -->
+<div class="overflow-x-auto bg-gray-100 w-full">
+  <!-- Responsive layout: column on small, row on large -->
+  <div class="flex flex-col lg:flex-row gap-2">
     <!-- Left vertical labels -->
-    <div class="col-span-1 space-y-4 ">
-      <div class="bg-white p-4 rounded h-[190px] w-60 border border-gray-200 rounded  ">
+    <div class="space-y-2 flex-shrink-0">
+      <div class="bg-white p-3 rounded h-[200px] w-70 border border-gray-300">
         <p class="font-semibold">Payment Date</p>
       </div>
-      <div class="bg-white p-4 rounded h-[190px] w-60 border border-gray-200 rounded ">
+      <div class="bg-white p-4 rounded h-[200px] w-70 border border-gray-300">
         <p class="font-semibold">Product Type</p>
       </div>
-      <div class="bg-white p-4 rounded h-[190px] w-60 border border-gray-200 rounded ">
+      <div class="bg-white p-4 rounded h-[200px] w-70 border border-gray-300">
         <p class="font-semibold">Reason for Closure</p>
       </div>
     </div>
 
     <!-- Right side: Stat cards + content box -->
-    <div class="col-span-4 space-y-4">
-      
+    <div class="flex-1 space-y-2">
+
       <!-- Stat cards -->
-      <div class="flex gap-4 h-[100px]">
-        <div class="bg-green-700 text-white p-4 rounded flex-1 text-center font-semibold border border-gray-300 rounded ">
-          Number of Claims
+      <div class="flex flex-col md:flex-row gap-2">
+        <div class="bg-green-700 h-29 text-white p-4 rounded flex-1 text-center font-semibold border border-gray-300">
+         Total Number of Claims
         </div>
-        <div class="bg-green-700 text-white p-4 rounded flex-1 text-center font-semibold border border-gray-300 rounded ">
-          Claims Paid
+        <div class="bg-green-700 h-29 text-white p-4 rounded flex-1 text-center font-semibold border border-gray-300">
+          Total Claims Paid
         </div>
-        <div class="bg-green-700 text-white p-4 rounded flex-1 text-center font-semibold border border-gray-300 rounded ">
+        <div class="bg-green-700 h-29 text-white p-4 rounded flex-1 text-center font-semibold border border-gray-300">
           Total Amount Paid
         </div>
       </div>
 
       <!-- Large box below stats -->
-      <div class="bg-white p-2 h-[485px] border border-gray-200 rounded ">
+      <div class="bg-white p-2 h-[490px] border border-gray-300 rounded w-full">
         <!-- Placeholder for chart/table or other content -->
       </div>
+
     </div>
   </div>
 </div>

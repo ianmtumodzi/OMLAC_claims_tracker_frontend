@@ -6,6 +6,7 @@ import { ClaimsComponent } from './pages/authenticated/admin-layout/claims/claim
 import { ReportsComponent } from './pages/authenticated/admin-layout/reports/reports.component';
 import { UsermanagementComponent } from './pages/authenticated/admin-layout/usermanagement/usermanagement.component';
 
+
 export const routes: Routes = [
   {
     path: '',
@@ -19,6 +20,7 @@ export const routes: Routes = [
       { path: 'claims', component: ClaimsComponent },
       { path: 'reports', component: ReportsComponent },
       { path: 'usermanagement', component: UsermanagementComponent },
+  
     ],
   },
 ];

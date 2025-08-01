@@ -1,12 +1,29 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
+  showModal = false;
 
+  toggleModal() {
+    this.showModal = !this.showModal;
+  }
+
+  closeModal() {
+    this.showModal = false;
+  }
+
+  onProfileClick() {
+    // Navigate or handle profile logic
+  }
+
+  onLogoutClick() {
+    // Implement logout logic
+  }
 }
