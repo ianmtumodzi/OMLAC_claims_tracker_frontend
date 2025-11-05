@@ -1,1 +1,205 @@
-<p>usermanagement works!</p>
+<!-- Wrapper -->
+<div class="bg-gray-100 w-full ">
+
+  <!-- IF Create Form Is Toggled On: Show Only Form -->
+  <ng-container *ngIf="showCreateForm; else showClaimsList">
+    <app-create-usermanagement (closeForm)="toggleCreateForm()"></app-create-usermanagement>
+  </ng-container>
+
+  <!-- ELSE Show the Entire Claims Table UI -->
+  <ng-template #showClaimsList>
+    
+    <!-- Top Bar: Search + Buttons -->
+    <div class="bg-white w-full border border-gray-300  p-5 space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+      <!-- Search -->
+      <div class="relative overflow-x-auto flex  justify-start px-1 py-1">
+        <form class="w-[500px]">
+          <div class="flex  items-center bg-white">
+            <input
+              type="search"
+              placeholder="Search"
+              class=" flex flex-1 flex-grow f h-8 px-4 text-sm text-gray-500 bg-white border border-gray-200 rounded-l focus:outline-none"
+              required
+            />
+            <button
+              type="submit"
+              class="flex items-center gap-2 px-4 h-8 text-sm  text-white bg-green-700 hover:bg-green-900 rounded-r"
+            >
+              <svg 
+              class="w-4 h-5" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="4"
+              viewBox="0 0 22 22" 
+              xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"></path>
+              </svg>
+              <span class="font-normal">Search</span>
+              
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Buttons: Create Export -->
+<div class="flex gap-2">
+  <!-- + Create Button -->
+  <button (click)="toggleCreateForm()"
+          class="flex items-center gap-2 h-7 w-28 px-1  bg-green-700 hover:bg-green-800 text-white rounded shadow text-sm font-semibold">
+    <!-- Solid Plus Icon from Heroicons -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     class="h-5 w-5"
+     fill="currentColor"
+     stroke="white"
+     stroke-width="1"
+     viewBox="0 0 20 20">
+  <path d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" />
+</svg>
+
+    <span class="font-normal">New Claim</span>
+  </button>
+
+  <!-- Export Button -->
+<button class="flex items-center gap-2 h-7 w-23 px-2 bg-green-700 hover:bg-green-800 text-white rounded shadow text-sm font-semibold">
+  <!-- Excel-like Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg"
+       class="w-5 h-5"
+       viewBox="0 0 25 25"
+       fill="none"
+       stroke="white"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round">
+    <!-- Document shape -->
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+    <!-- Fold corner -->
+    <path d="M14 2v6h6" />
+    <!-- X (for Excel look) -->
+    <path d="M8 10l4 4m0-4l-4 4" />
+  </svg>
+
+  <span class="font-normal">Export</span>
+</button>
+
+
+</div>
+
+    </div>
+      <!-- Users Table -->
+      <div class="overflow-x-auto rounded-lg border border-gray-200">
+        <table class="w-full text-sm text-left text-gray-500">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <tr>
+              <th class="px-6 py-3">ID</th>
+              <th class="px-6 py-3">First Name</th>
+              <th class="px-6 py-3">Last Name</th>
+              <th class="px-6 py-3">Email</th>
+              <th class="px-6 py-3">Status</th>
+              <th class="px-6 py-3 text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <!-- Example Row: Funny Phiri -->
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-3 font-medium text-gray-900">1</td>
+              <td class="px-6 py-3">Funny</td>
+              <td class="px-6 py-3">Phiri</td>
+              <td class="px-6 py-3">funny.phiri&#64;oldmutual.co.mw</td>
+              <td class="px-6 py-3">
+                <label class="inline-flex items-center cursor-pointer">
+                  <input type="checkbox" checked class="sr-only">
+                  <div class="w-10 h-5 bg-green-300 rounded-full relative">
+                    <div class="absolute bg-white w-4 h-4 rounded-full top-0.5 left-1 transform translate-x-5 transition"></div>
+                  </div>
+                  <span class="ml-2 text-xs font-semibold text-green-700">Active</span>
+                </label>
+              </td>
+              <td class="px-6 py-3 text-center flex justify-center gap-2">
+                <!-- Edit -->
+                <button class="bg-blue-100 text-blue-600 hover:bg-blue-200 p-2 rounded-full transition" title="Edit">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M17.414 2.586a2 2 0 010 2.828l-1.829 1.828-2.828-2.828L14.586 2.586a2 2 0 012.828 0zM11.586 5.414l2.828 2.828-7.07 7.071H4.515v-2.828l7.071-7.071z"/>
+                  </svg>
+                </button>
+                <!-- Delete -->
+                <button class="bg-red-100 text-red-600 hover:bg-red-200 p-2 rounded-full transition" title="Delete">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M9 2a1 1 0 00-1 1v1H4a1 1 0 100 2h12a1 1 0 100-2h-4V3a1 1 0 00-1-1H9zM5 7a1 1 0 011-1h8a1 1 0 011 1v9a2 2 0 01-2 2H7a2 2 0 01-2-2V7z" clip-rule="evenodd"/>
+                  </svg>
+                </button>
+              </td>
+            </tr>
+
+            <!-- Repeat for other users -->
+            <tr *ngFor="let user of users; let i = index" class="hover:bg-gray-50">
+              <td class="px-6 py-3 font-medium text-gray-900">{{ i + 2 }}</td>
+              <td class="px-6 py-3">{{ user.firstName }}</td>
+              <td class="px-6 py-3">{{ user.lastName }}</td>
+              <td class="px-6 py-3">{{ user.email }}</td>
+              <td class="px-6 py-3">
+                <label class="inline-flex items-center cursor-pointer">
+                  <input type="checkbox" [checked]="user.active" class="sr-only">
+                  <div class="w-10 h-5 rounded-full relative" [ngClass]="user.active ? 'bg-green-300' : 'bg-gray-300'">
+                    <div class="absolute bg-white w-4 h-4 rounded-full top-0.5 left-1 transition" 
+                         [style.transform]="user.active ? 'translateX(20px)' : 'translateX(0)'" ></div>
+                  </div>
+                  <span class="ml-2 text-xs font-semibold" [ngClass]="user.active ? 'text-green-700' : 'text-red-700'">
+                    {{ user.active ? 'Active' : 'Inactive' }}
+                  </span>
+                </label>
+              </td>
+              <td class="px-6 py-3 text-center flex justify-center gap-2">
+                <button class="bg-blue-100 text-blue-600 hover:bg-blue-200 p-2 rounded-full transition" title="Edit">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M17.414 2.586a2 2 0 010 2.828l-1.829 1.828-2.828-2.828L14.586 2.586a2 2 0 012.828 0zM11.586 5.414l2.828 2.828-7.07 7.071H4.515v-2.828l7.071-7.071z"/>
+                  </svg>
+                </button>
+                <button class="bg-red-100 text-red-600 hover:bg-red-200 p-2 rounded-full transition" title="Delete">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M9 2a1 1 0 00-1 1v1H4a1 1 0 100 2h12a1 1 0 100-2h-4V3a1 1 0 00-1-1H9zM5 7a1 1 0 011-1h8a1 1 0 011 1v9a2 2 0 01-2 2H7a2 2 0 01-2-2V7z" clip-rule="evenodd"/>
+                  </svg>
+                </button>
+              </td>
+        </tr>
+            <tr>
+                <td>
+
+                </td>
+            </tr>
+          </tbody>
+        </table>
+       
+        <nav class="flex items-center flex-column flex-wrap md:flex-row justify-between pt-4" aria-label="Table navigation">
+        <span class="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto">Showing <span class="font-semibold text-gray-900 dark:text-white">1-6</span> of <span class="font-semibold text-gray-900 dark:text-white">1000</span></span>
+        <ul class="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8">
+            <li>
+                <a href="#" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
+            </li>
+            <li>
+                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+            </li>
+            <li>
+                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+            </li>
+            <li>
+                <a href="#" aria-current="page" class="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+            </li>
+            <li>
+                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
+            </li>
+            <li>
+                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
+            </li>
+            <li>
+        <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
+            </li>
+        </ul>
+    </nav>
+   
+        
+      </div>
+    </div>
+  </ng-template>
+</div>
