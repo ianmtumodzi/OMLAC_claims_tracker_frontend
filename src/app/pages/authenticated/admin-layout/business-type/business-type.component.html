@@ -1,0 +1,120 @@
+<!-- Section Header -->
+<div class="flex flex-wrap items-center justify-between bg-white border border-gray-300 p-4 rounded-t-md shadow-sm">
+  <h2 class="text-lg font-semibold text-gray-800">Business Type</h2>
+
+  <div class="flex flex-wrap gap-2">
+    <!-- Search -->
+    <form class="flex items-center">
+      <input
+        type="text"
+        placeholder="Search"
+        class="border border-gray-300 text-sm rounded-l px-3 py-1 focus:ring-1 focus:ring-green-600 focus:outline-none"
+      />
+      <button
+        type="submit"
+        class="bg-green-700 hover:bg-green-800 text-white px-3 py-1 rounded-r text-sm flex items-center gap-1"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
+        </svg>
+        Search
+      </button>
+    </form>
+
+    <!-- New Claim Type Button -->
+    <button
+      class="bg-green-700 hover:bg-green-800 text-white text-sm px-3 py-1 rounded flex items-center gap-1"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+        <path
+          d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+        />
+      </svg>
+      New Business Type
+    </button>
+  </div>
+</div>
+
+<!-- Table Section -->
+<div class="relative overflow-x-auto shadow-md mt-2">
+  <table class="w-full text-sm text-left text-gray-700">
+    <thead class="text-xs uppercase bg-white text-gray-600 border-b border-gray-200">
+      <tr>
+        <th class="p-4">
+          <input id="select-all" type="checkbox" class="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+        </th>
+        <th class="px-6 py-3">ID</th>
+        <th class="px-6 py-3">Business Type</th>
+        <th class="px-6 py-3 text-center">Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="bg-white border-b border-gray-200 hover:bg-gray-50">
+        <td class="p-4">
+          <input type="checkbox" class="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+        </td>
+        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">001</td>
+        <td class="px-6 py-4">OMLAC</td>
+        <td class="px-6 py-3 text-center flex justify-center gap-3">
+
+              <!-- Edit Button -->
+              <button title="Edit"
+                class="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-blue-700 bg-blue-100 rounded hover:bg-blue-200 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.232 5.232l3.536 3.536M9 11l6 6M3 21v-3.586a1 1 0 01.293-.707l11-11a1 1 0 011.414 0l2.586 2.586a1 1 0 010 1.414l-11 11A1 1 0 007.586 21H3z" />
+                </svg>
+                Edit
+              </button>
+
+              <!-- Delete Button -->
+              <button title="Delete"
+                class="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-red-700 bg-red-100 rounded hover:bg-red-200 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                Delete
+              </button>
+            </td>
+      </tr>
+
+      <tr class="bg-white border-b border-gray-200 hover:bg-gray-50">
+        <td class="p-4">
+          <input type="checkbox" class="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+        </td>
+        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">002</td>
+        <td class="px-6 py-4">OMPSC</td>
+        <td class="px-6 py-3 text-center flex justify-center gap-3">
+
+              <!-- Edit Button -->
+              <button title="Edit"
+                class="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-blue-700 bg-blue-100 rounded hover:bg-blue-200 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.232 5.232l3.536 3.536M9 11l6 6M3 21v-3.586a1 1 0 01.293-.707l11-11a1 1 0 011.414 0l2.586 2.586a1 1 0 010 1.414l-11 11A1 1 0 007.586 21H3z" />
+                </svg>
+                Edit
+              </button>
+
+              <!-- Delete Button -->
+              <button title="Delete"
+                class="inline-flex items-center gap-1 px-3 py-1.5 text-sm font-medium text-red-700 bg-red-100 rounded hover:bg-red-200 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                Delete
+              </button>
+            </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>

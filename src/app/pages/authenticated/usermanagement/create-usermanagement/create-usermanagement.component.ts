@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './create-usermanagement.component.html',
-  styleUrl: './create-usermanagement.component.css'
+  styleUrls: ['./create-usermanagement.component.css']
 })
 export class CreateUsermanagementComponent {
 

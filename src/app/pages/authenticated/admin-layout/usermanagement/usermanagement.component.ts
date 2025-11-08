@@ -2,40 +2,29 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; // ✅ ADD THIS
 import { CreateUsermanagementComponent } from '../../usermanagement/create-usermanagement/create-usermanagement.component';
 
-interface User {
-  firstName: string;
-  lastName: string;
-  email: string;
-  active: boolean;
-}
 
 
 @Component({
   selector: 'app-usermanagement',
   standalone: true,
-  imports: [
-    CommonModule,
-    CreateUsermanagementComponent
-  ],
   templateUrl: './usermanagement.component.html',
-  styleUrls: ['./usermanagement.component.css']
+  imports: [CommonModule,CreateUsermanagementComponent],
 })
 export class UsermanagementComponent {
-  showCreateForm = false;
+  showCreateUserForm = false;
 
-    users: User[] = [
-    { firstName: 'Funny', lastName: 'Phiri', email: 'funny.phiri@oldmutual.co.mw', active: true },
-    { firstName: 'John', lastName: 'Doe', email: 'john.doe@oldmutual.co.mw', active: false },
-    { firstName: 'Jane', lastName: 'Smith', email: 'jane.smith@oldmutual.co.mw', active: true },
-    { firstName: 'Funny', lastName: 'Phiri', email: 'funny.phiri@oldmutual.co.mw', active: true },
-    { firstName: 'John', lastName: 'Doe', email: 'john.doe@oldmutual.co.mw', active: false },
-   
-    // Add more users as needed
+  users = [
+    { id: 1, firstName: 'Emmanule ', lastName: 'Golombe', email: 'egolombe@example.com', role: 'Admin', active: true },
+    { id: 2, firstName: 'Jacob', lastName: 'Kawonga', email: 'jkawong@example.com', role: 'User', active: false },
+    { id: 3, firstName: 'Calorin', lastName: 'Tembo', email: 'ctembo@example.com', role: 'Manager', active: true },
+    { id: 4, firstName: 'Aaron', lastName: 'Mangungu', email: 'amangungu@example.com', role: 'Admin', active: true },
+    { id: 5, firstName: 'ireen', lastName: 'Kawonga', email: 'ikawonga@example.com', role: 'User', active: false },
+    { id: 6, firstName: 'Milcah', lastName: 'Kwizombe', email: 'kwizombe@example.com', role: 'Manager', active: true },
+    { id: 7, firstName: 'Tamandani', lastName: 'kukhala', email: 'tamandani@example.com', role: 'User', active: false },
+
   ];
-
-  toggleCreateForm() {
-
-    this.showCreateForm = !this.showCreateForm;
+  toggleCreateUserForm() {
+    this.showCreateUserForm = !this.showCreateUserForm;
   }
-
 }
+
